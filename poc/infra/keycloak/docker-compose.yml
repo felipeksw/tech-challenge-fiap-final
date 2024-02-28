@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  postgres-kc:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: postgres-kc
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "keycloak"]
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - type: tmpfs
+        target: /var/lib/postgresql/data
+        tmpfs:
+          size: 100000000
+
+  keycloak:
+    depends_on:
+      - postgres-kc 
+    image: quay.io/keycloak/keycloak:${KC_VERSION}
+    command: ["start-dev", "--import-realm", "--features=declarative-user-profile"]
+    restart: unless-stopped
+    environment:
+      KC_DB: postgres
+      KC_DB_USERNAME: ${POSTGRES_USER}
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      KC_DB_URL: "jdbc:postgresql://postgres-kc:5432/keycloak"
+      KC_METRICS_ENABLED: true
+      KC_LOG_LEVEL: ${KC_LOG_LEVEL}
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    ports:
+      - ${KC_PORT}:8080
+    volumes:
+      - ./tech_challenge.json:/opt/keycloak/data/import/realm.json:ro

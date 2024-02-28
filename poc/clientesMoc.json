@@ -1,0 +1,56 @@
+[
+	{
+		"cpf": "26762876803",
+		"senha": "WcABhF5Jb8",
+		"email": "yago_bryan_silveira@vmetaiscba.com.br",
+		"nome": "Yago",
+		"sobrenome": "Silveira",		
+		"celular": "(11) 98792-4001",
+		"endereco": "Rua Atlântico Meridional, 253, Vila Roque - São Paulo/SP"
+	},
+	{
+		"cpf": "51475142870",
+		"senha": "uJbbus7tNW",
+		"email": "osvaldo_brito@rcstechnology.com.br",
+		"nome": "Osvaldo",
+		"sobrenome": "Brito",		
+		"celular": "(11) 99893-7996",
+		"endereco": "Travessa Rio Grande do Piauí, 236, Chácara Belenzinho - São Paulo/SP"
+	},
+	{
+		"cpf": "99226179867",
+		"senha": "z3FFmOoliC",		
+		"email": "ruan_pietro_aragao@diebold.com",
+		"nome": "Ruan",
+		"sobrenome": "Aragão",		
+		"celular": "(17) 99590-7851",
+		"endereco": "Rua Dez, 207, Vila Alto do Sumaré - Bebedouro/SP"
+	},
+	{
+		"cpf": "34683707845",
+		"senha": "xa8MtfxaCC",
+		"email": "miguel.vicente.rocha@desari.com.br",		
+		"nome": "Miguel Vicente",
+		"sobrenome": "Rocha",
+		"celular": "(13) 98147-7157",		
+		"endereco": "Rua Álvares de Azevedo, 915, Boqueirão, Santos/SP"
+	},
+	{
+		"cpf": "70914431870",
+		"senha": "2khmSjGKn0",
+		"email": "erick_monteiro@balloons.com.br",
+		"nome": "Erick",
+		"sobrenome": "Monteiro",		
+		"celular": "(16) 99284-6618",
+		"endereco": "Rua Antônio Ramos Gomes, 149, Alto, Matão/SP"
+	},
+	{
+		"cpf": "829.979.748-95",
+		"senha": "ARsZxdbPcP",
+		"email": "leandro_giovanni_almada@fernandaleal.com.br",
+		"nome": "Leandro Giovanni",
+		"sobrenome": "Almada",
+		"celular": "(11) 98965-4967",
+		"endereco": "Rua Santa Márcia, 700, Jardim Paulistano (Zona Norte), São Paulo/SP"
+	}
+]

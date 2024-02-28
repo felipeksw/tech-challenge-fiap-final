@@ -1,0 +1,46 @@
+Portas:
+    Keycloak: 8091
+    MariaDB Tech Challenge: 3306
+    phpMyAdmin: 8092
+    Kafka UI: 8093
+    Kafka Bootstrap Servers: 29092
+
+
+
+========
+
+Acesso a administração do Keycloak:
+http://<<host>>:8091/
+
+Acesso a UI de login/cadastro de clientes:
+http://<<host>>:8091/realms/tech_challenge/account/#/security/signingin
+
+Acesso a UI do Kafka
+http://<<host>>:8093/ui/clusters/local/all-topics
+
+========
+
+Keycloak:
+
+login: admin
+senha: admin
+
+========
+
+Usuário Administrador:
+
+login: grupo36-admin
+senha: SPIudeFIntxAoX9t
+
+========
+
+Clientes cadastrados:
+
+login: 26762876803
+senha: WcABhF5Jb8
+--------
+
+login: 51475142870
+senha: uJbbus7tNW
+--------
+
