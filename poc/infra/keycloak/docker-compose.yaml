@@ -36,3 +36,7 @@ services:
       - ${KC_PORT}:8080
     volumes:
       - ./tech_challenge.json:/opt/keycloak/data/import/realm.json:ro
+
+networks:
+  app_network:
+    driver: bridge

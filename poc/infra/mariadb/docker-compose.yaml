@@ -21,3 +21,7 @@ services:
       - 8092:80
     environment:
       - PMA_ARBITRARY=1 
+
+networks:
+  app_network:
+    driver: bridge
