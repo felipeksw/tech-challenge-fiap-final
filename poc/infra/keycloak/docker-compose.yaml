@@ -11,6 +11,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT}:5432
     volumes:
       - type: tmpfs
         target: /var/lib/postgresql/data
@@ -27,7 +29,7 @@ services:
       KC_DB: postgres
       KC_DB_USERNAME: ${POSTGRES_USER}
       KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
-      KC_DB_URL: "jdbc:postgresql://postgres-kc:5432/keycloak"
+      KC_DB_URL: "jdbc:postgresql://postgres-kc:5432/${POSTGRES_DB}"
       KC_METRICS_ENABLED: true
       KC_LOG_LEVEL: ${KC_LOG_LEVEL}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
