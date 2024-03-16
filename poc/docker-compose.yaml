@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  tech-challenge-fiap-order:
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest-a061ac30fcef8deb2d7b74b85c3b9cc3e8c92f25
+    container_name: tech-challenge-fiap-order
+    ports:
+      - "9082:8080"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+      - PAYMENT_URL=${PAYMENT_URL}
+
+  tech-challenge-fiap-followup:
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest-4484e34884544d1de03a4cc34e718fad821214a0
+    container_name: tech-challenge-fiap-followup
+    ports:
+      - "9083:8080"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
+      - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+
+  tech-challenge-fiap-production:
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-production:latest-746a3685397714043ae14541c646be65917aff07
+    container_name: tech-challenge-fiap-production
+    ports:
+      - "9085:8080"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
+      - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}      
+
+networks:
+  app_network:
+    driver: bridge
