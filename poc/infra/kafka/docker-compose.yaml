@@ -45,12 +45,14 @@ services:
     command: "bash -c 'echo Waiting for Kafka to be ready... && \
                cub kafka-ready -b kafka:9092 1 90 && \
                kafka-topics --create --topic pagamento.solicitado --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
+               kafka-topics --create --topic pagamento.pendente --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.aceito --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.recusado --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
-               kafka-topics --create --topic pedido.para.producao --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
+               kafka-topics --create --topic pagamento.finalizado --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pedido.status --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.solicitado.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
+               kafka-topics --create --topic pagamento.pendente.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.aceito.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.recusado.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
-               kafka-topics --create --topic pedido.para.producao.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
+               kafka-topics --create --topic pagamento.finalizado.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pedido.status.DL --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092'"
