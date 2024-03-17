@@ -27,6 +27,7 @@ services:
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
     depends_on:
+      - zookeeper
       - kafka
     ports:
       - 8090:8080
@@ -42,7 +43,7 @@ services:
     depends_on:
       - kafka
     command: "bash -c 'echo Waiting for Kafka to be ready... && \
-               cub kafka-ready -b kafka1:29092 2 90 && \
+               cub kafka-ready -b kafka:9092 1 90 && \
                kafka-topics --create --topic pagamento.solicitado --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.aceito --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \
                kafka-topics --create --topic pagamento.recusado --partitions 2 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092 && \

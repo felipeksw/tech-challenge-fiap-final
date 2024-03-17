@@ -1,0 +1,91 @@
+[
+    {
+        "clientName": "Banzai",
+        "paymentMethod": "qrcode_mercadolivre",
+        "orderItems": [
+            {
+                "productId": 1,
+                "quantity": 1
+            },
+            {
+                "productId": 10,
+                "quantity": 1
+            }		
+        ]
+    },
+    {
+        "clientName": "Yago",
+        "customerId": "2ca55778-9883-4b16-a378-e3566147db18",
+        "paymentMethod": "qrcode_mercadolivre",
+        "orderItems": [
+            {
+                "productId": 6,
+                "quantity": 1,
+                "additionalInfo": "Pouca Ervilha"
+            },
+            {
+                "productId": 7,
+                "quantity": 1
+            },
+            {
+                "productId": 5,
+                "quantity": 1,
+                "additionalInfo": "Sem Queijo"
+            },
+            {
+                "productId": 4,
+                "quantity": 1
+            },
+            {
+                "productId": 8,
+                "quantity": 2
+            },
+            {
+                "productId": 11,
+                "quantity": 1
+            },
+            {
+                "productId": 13,
+                "quantity": 1,
+                "additionalInfo": "Com Açucar"
+            },
+            {
+                "productId": 16,
+                "quantity": 4
+            }
+        ]
+    },
+    {
+        "clientName": "Osvaldo",
+        "customerId": "d791ae25-0ed7-4a6d-a8bc-752c248101e8",
+        "paymentMethod": "qrcode_mercadolivre",
+        "orderItems": [
+            {
+                "productId": 5,
+                "quantity": 1
+            },
+            {
+                "productId": 3,
+                "quantity": 1
+            },
+            {
+                "productId": 8,
+                "quantity": 1,
+                "additionalInfo": "Natural, sem gelo"
+            },
+            {
+                "productId": 8,
+                "quantity": 1,
+                "additionalInfo": "Com gelo e limão em rodelas"
+            },	
+            {
+                "productId": 12,
+                "quantity": 1
+            },
+            {
+                "productId": 15,
+                "quantity": 2
+            }
+        ]
+    }
+]

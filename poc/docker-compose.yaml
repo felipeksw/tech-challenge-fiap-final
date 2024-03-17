@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   tech-challenge-fiap-order:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest-a061ac30fcef8deb2d7b74b85c3b9cc3e8c92f25
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest-7d43ff91d10199762875ecefd7a17a9a5c581199
     container_name: tech-challenge-fiap-order
     ports:
       - "9082:8080"
@@ -17,7 +17,7 @@ services:
       - PAYMENT_URL=${PAYMENT_URL}
 
   tech-challenge-fiap-followup:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest-4484e34884544d1de03a4cc34e718fad821214a0
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest-8d298cf7f544a131d2272a77079544aec365bf96
     container_name: tech-challenge-fiap-followup
     ports:
       - "9083:8080"
@@ -33,7 +33,7 @@ services:
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
 
   tech-challenge-fiap-production:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-production:latest-746a3685397714043ae14541c646be65917aff07
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-production:latest-4d9acc330c8c41e4260ce6d29dd49c5bcfcac941
     container_name: tech-challenge-fiap-production
     ports:
       - "9085:8080"

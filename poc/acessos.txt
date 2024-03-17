@@ -47,3 +47,7 @@ senha: uJbbus7tNW
 
 ==== phpMyAdmin UI ====
 - Acesso ao phpMyAdmin: http://<<HOST>>:8092
+
+
+LEMBRETE PARA ARQUIVO SQL
+SET GLOBAL time_zone = 'Brazil/East';
