@@ -37,5 +37,5 @@ A infraestrutra é composta por:
 * [Gerenciamento de  Pedidos](https://github.com/felipeksw/tech-challenge-fiap-order "tech-challenge-fiap-order")
 * [Gerenciamento de Pagamento](https://github.com/juliapcosta97/tech-challenge-payments "tech-challenge-payments")
 * [Gerenciamento de Status](https://github.com/felipeksw/tech-challenge-fiap-followup "tech-challenge-fiap-followup")
-* [Gerenciamento da Produção]( https://github.com/rodJeronimo/tech-challenge-fiap-production "tech-challenge-fiap-production")
+* [Gerenciamento da Produção](https://github.com/rodJeronimo/tech-challenge-fiap-production "tech-challenge-fiap-production")
 

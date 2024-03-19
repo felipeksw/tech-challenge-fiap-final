@@ -17,7 +17,7 @@ services:
       - PAYMENT_URL=${PAYMENT_URL}
 
   tech-challenge-fiap-followup:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest-8d298cf7f544a131d2272a77079544aec365bf96
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest-ef958945de57ce5cd87744739bc62bdc27cfc372
     container_name: tech-challenge-fiap-followup
     ports:
       - "9083:8080"
@@ -33,7 +33,7 @@ services:
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
 
   tech-challenge-fiap-production:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-production:latest-4d9acc330c8c41e4260ce6d29dd49c5bcfcac941
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-production:latest-bb1c5e5014139e82a5bf6e936310f5a877e46d6f
     container_name: tech-challenge-fiap-production
     ports:
       - "9085:8080"
@@ -46,7 +46,26 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
       - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
       - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
-      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}      
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+
+  tech-challenge-fiap-product-api:
+    container_name: tech-challenge-fiap-product-api
+    image: gcamargo1997/tech-challenge-product-api:latest
+    ports:
+      - "9081:8081"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENT-ID=${CLIENT-ID}
+      - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENT-SECRET=${CLIENT-SECRET}
+      - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER-URI=${KC_URL_RELM}
+      - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI=${KC_URL_RELM}
+      - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI=${KC_URL_RELM}/.well-known/openid-configuration
+      - SECURITY_OAUTH2-ISSUER-URI=${KC_URL_RELM}
 
 networks:
   app_network:
