@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   tech-challenge-fiap-order:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest-7d43ff91d10199762875ecefd7a17a9a5c581199
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest
     container_name: tech-challenge-fiap-order
     ports:
       - "9082:8080"
@@ -17,7 +17,7 @@ services:
       - PAYMENT_URL=${PAYMENT_URL}
 
   tech-challenge-fiap-followup:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest-ef958945de57ce5cd87744739bc62bdc27cfc372
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest
     container_name: tech-challenge-fiap-followup
     ports:
       - "9083:8080"
@@ -33,7 +33,7 @@ services:
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
 
   tech-challenge-fiap-production:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-production:latest-bb1c5e5014139e82a5bf6e936310f5a877e46d6f
+    image: public.ecr.aws/i2f8d1v7/tech-challenge-fiap-production:latest-c02f58a77484742277f75bdba524ab31998ca520
     container_name: tech-challenge-fiap-production
     ports:
       - "9085:8080"
@@ -48,8 +48,8 @@ services:
       - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
 
-  tech-challenge-fiap-product-api:
-    container_name: tech-challenge-fiap-product-api
+  tech-challenge-fiap-product:
+    container_name: tech-challenge-fiap-product
     image: gcamargo1997/tech-challenge-product-api:latest
     ports:
       - "9081:8081"
@@ -66,6 +66,17 @@ services:
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI=${KC_URL_RELM}
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI=${KC_URL_RELM}/.well-known/openid-configuration
       - SECURITY_OAUTH2-ISSUER-URI=${KC_URL_RELM}
+
+  tech-challenge-fiap-payment:
+    container_name: tech-challenge-fiap-payment
+    image: juliapcosta97/tech-challenge-payments-repository:latest
+    ports:
+      - "9084:8081"
+    networks:
+      - app_network
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+      - MP_TOKEN=${MP_TOKEN}
 
 networks:
   app_network:

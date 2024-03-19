@@ -502,6 +502,81 @@
   "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
   "webAuthnPolicyPasswordlessAcceptableAaguids": [],
   "webAuthnPolicyPasswordlessExtraOrigins": [],
+  "users" : [ {
+    "id" : "2ca55778-9883-4b16-a378-e3566147db18",
+    "createdTimestamp" : 1708688413572,
+    "username" : "26762876803",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Yago",
+    "lastName" : "Silveira",
+    "email" : "yago_bryan_silveira@vmetaiscba.com.br",
+    "attributes" : {
+      "phoneNunber" : [ "(11) 98792-4001" ],
+      "address" : [ "Rua Atlântico Meridional, 253, Vila Roque - São Paulo/SP" ]
+    },
+    "credentials" : [ {
+      "id" : "23df4ea0-887c-4415-98ef-99ff821bd7ef",
+      "type" : "password",
+      "createdDate" : 1708688413614,
+      "secretData" : "{\"value\":\"uhKdSsKaTGQMcGc+CgQTsGen6+kmj88Xkp74sW8oxRE=\",\"salt\":\"nZg2qYfO5t+2OcRynqnWAg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-tech_challenge" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "d791ae25-0ed7-4a6d-a8bc-752c248101e8",
+    "createdTimestamp" : 1708688470071,
+    "username" : "51475142870",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Osvaldo",
+    "lastName" : "Brito",
+    "email" : "osvaldo_brito@rcstechnology.com.br",
+    "attributes" : {
+      "phoneNunber" : [ "(11) 99893-7996" ],
+      "address" : [ "Travessa Rio Grande do Piauí, 236, Chácara Belenzinho - São Paulo/SP" ]
+    },
+    "credentials" : [ {
+      "id" : "d0285cea-fc07-443c-943e-2dae9ddeffe7",
+      "type" : "password",
+      "createdDate" : 1708688470116,
+      "secretData" : "{\"value\":\"effE7UP4Wj5qEejuG1i6WiUdElMwJpJRhN0hBAxMrlA=\",\"salt\":\"qCz43T7RziX6Ms5LShu6Vg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-tech_challenge" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "8bf19499-6c9d-4266-81df-5b84e7e5c1be",
+    "createdTimestamp" : 1708686477117,
+    "username" : "grupo36-admin",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : true,
+    "firstName" : "Admin",
+    "email" : "admin@tech-challenge-fiap.com",
+    "credentials" : [ {
+      "id" : "18e8e57c-02db-4e46-908b-2b16346f66d0",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1708686617787,
+      "secretData" : "{\"value\":\"Mc8nu7FKYMAxvGZIrHmgBKc9uVikD9NT69fRd+mk5Ws=\",\"salt\":\"yOPLLfMhumyayuArtuzdwQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-tech_challenge", "tc_products_edit", "tc_products_create", "tc_products_delete", "tc_products_read", "tc_products_readall" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ],
   "scopeMappings": [
     {
       "clientScope": "offline_access",

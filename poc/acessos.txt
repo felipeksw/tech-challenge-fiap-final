@@ -33,7 +33,7 @@ roles:
     tc_products_read
     tc_products_readall
 
-- Usuários Comuns, clientes da Lanchonete:
+- Usuários Comuns, clientes da Lanchonete, previamente cadastrados:
 
 login: 26762876803
 senha: WcABhF5Jb8
