@@ -33,7 +33,7 @@ roles:
     tc_products_read
     tc_products_readall
 
-- Usuários Comuns, clientes da Lanchonete:
+- Usuários Comuns, clientes da Lanchonete, previamente cadastrados:
 
 login: 26762876803
 senha: WcABhF5Jb8
@@ -47,7 +47,3 @@ senha: uJbbus7tNW
 
 ==== phpMyAdmin UI ====
 - Acesso ao phpMyAdmin: http://<<HOST>>:8092
-
-
-LEMBRETE PARA ARQUIVO SQL
-SET GLOBAL time_zone = 'Brazil/East';

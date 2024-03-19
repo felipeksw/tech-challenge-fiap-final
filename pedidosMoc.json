@@ -14,6 +14,24 @@
         ]
     },
     {
+        "clientName": "Daniel",
+        "paymentMethod": "qrcode_mercadolivre",
+        "orderItems": [
+            {
+                "productId": 14,
+                "quantity": 1
+            },
+            {
+                "productId": 15,
+                "quantity": 1
+            },
+            {
+                "productId": 9,
+                "quantity": 2
+            }
+        ]
+    },
+    {
         "clientName": "Yago",
         "customerId": "2ca55778-9883-4b16-a378-e3566147db18",
         "paymentMethod": "qrcode_mercadolivre",
