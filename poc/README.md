@@ -63,3 +63,15 @@ Para obter mais Pedidos para testes, utilizar o arquivo [pedidosMoc.json](./pedi
     - senha: senha123
 
 Arquivo com alguns SQL útils: [Querys Auxiliares](./querys_auxiliares.sql)
+
+## Diversos
+- Sequência de status possíveis para um pedido
+    - new
+    - payment_requested
+    - payment_pending
+    - payment_accepted
+    - payment_refused
+    - order_received
+    - order_in_production
+    - order_completed
+    - order_delivered
