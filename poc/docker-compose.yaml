@@ -1,53 +1,6 @@
 version: '3.9'
 
 services:
-  tech-challenge-fiap-order:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest
-    container_name: tech-challenge-fiap-order
-    ports:
-      - "9082:8080"
-    networks:
-      - app_network
-    environment:
-      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
-      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
-      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
-      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
-      - PAYMENT_URL=${PAYMENT_URL}
-
-  tech-challenge-fiap-followup:
-    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest
-    container_name: tech-challenge-fiap-followup
-    ports:
-      - "9083:8080"
-    networks:
-      - app_network
-    environment:
-      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
-      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
-      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
-      - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
-      - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
-      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
-
-  tech-challenge-fiap-production:
-    image: public.ecr.aws/i2f8d1v7/tech-challenge-fiap-production:latest-c02f58a77484742277f75bdba524ab31998ca520
-    container_name: tech-challenge-fiap-production
-    ports:
-      - "9085:8080"
-    networks:
-      - app_network
-    environment:
-      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
-      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
-      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
-      - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
-      - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
-      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
-
   tech-challenge-fiap-product:
     container_name: tech-challenge-fiap-product
     image: gcamargo1997/tech-challenge-product-api:latest
@@ -66,17 +19,69 @@ services:
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI=${KC_URL_RELM}
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI=${KC_URL_RELM}/.well-known/openid-configuration
       - SECURITY_OAUTH2-ISSUER-URI=${KC_URL_RELM}
+      - LOGGING_LEVEL_ROOT=${LOGGING_LEVEL_ROOT}
+
+  tech-challenge-fiap-order:
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-order:latest
+    container_name: tech-challenge-fiap-order
+    ports:
+      - "9082:8080"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+      - PAYMENT_URL=${PAYMENT_URL}
+      - LOGGING_LEVEL_ROOT=${LOGGING_LEVEL_ROOT}
+
+  tech-challenge-fiap-followup:
+    image: public.ecr.aws/u0d1o6m1/tech-challenge-fiap-followup:latest
+    container_name: tech-challenge-fiap-followup
+    ports:
+      - "9083:8080"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
+      - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+      - LOGGING_LEVEL_ROOT=${LOGGING_LEVEL_ROOT}
 
   tech-challenge-fiap-payment:
     container_name: tech-challenge-fiap-payment
     image: juliapcosta97/tech-challenge-payments-repository:latest
     ports:
-      - "9084:8081"
+      - "9084:8080"
     networks:
       - app_network
     environment:
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
       - MP_TOKEN=${MP_TOKEN}
+      - LOGGING_LEVEL_ROOT=${LOGGING_LEVEL_ROOT}      
+
+  tech-challenge-fiap-production:
+    image: public.ecr.aws/i2f8d1v7/tech-challenge-fiap-production:latest
+    container_name: tech-challenge-fiap-production
+    ports:
+      - "9085:8080"
+    networks:
+      - app_network
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_DATA_REDIS_HOST=${SPRING_DATA_REDIS_HOST}
+      - SPRING_DATA_REDIS_PORT=${SPRING_DATA_REDIS_PORT}
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+      - LOGGING_LEVEL_ROOT=${LOGGING_LEVEL_ROOT}
 
 networks:
   app_network:
