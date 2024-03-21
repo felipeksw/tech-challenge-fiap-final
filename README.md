@@ -31,7 +31,7 @@ A infraestrutra é composta por:
     * [Confirmação Pagamento](https://github.com/juliapcosta97/tech-challenge-payments/tree/main/owasp "Pré OWASP ZAP")
 
 ## LGPD
-* [Relatório RIPD](./lgpd/readme.md "RIPD").
+* [Relatório RIPD](./lgpd/RIPD-lanchonete-sota2-grupo36.docx "RIPD").
 
 ## Vídeo de funcionamento
 [Acesso ao vídeo (Google Drive)](https://drive.google.com/file/d/1JZMzE6eQPcJU0ELPOLEfl0sAU74fAltR/view?usp=sharing "SAGA Coreografado")
