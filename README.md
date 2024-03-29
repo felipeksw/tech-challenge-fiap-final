@@ -34,7 +34,7 @@ A infraestrutra é composta por:
 * [Relatório RIPD](./lgpd/RIPD-lanchonete-sota2-grupo36.docx "RIPD").
 
 ## Vídeo de funcionamento
-[Acesso ao vídeo (Google Drive)](https://drive.google.com/file/d/1JZMzE6eQPcJU0ELPOLEfl0sAU74fAltR/view?usp=sharing "SAGA Coreografado")
+[Acesso ao vídeo (Google Drive)](https://drive.google.com/file/d/1gHDRPnJDpBAhHZb-MfZwvVW1mMHMKVao/view?usp=sharing "SAGA Coreografado")
 * Índice
     * 00:00 - 00:22 : Apresentação do Grupo
     * 00:23 - 02:30 : Visão geral da Arquitetura
